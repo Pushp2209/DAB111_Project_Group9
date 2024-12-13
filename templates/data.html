@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Page</title>
+    <style>
+        header {
+            background-color: #007bff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .heading {
+            color: #f5ac04;
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(247, 191, 5, 0.3);
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%; 
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #000; /* Set border for the table */
+        }
+
+        th, td {
+            border: 1px solid #000; /* Set border for table cells */
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Order Details</h1>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Restaurant ID</th>
+                <th>Order Date</th>
+                <th>Quantity of Items</th>
+                <th>Order Amount</th>
+                <th>Payment Mode</th>
+                <th>Delivery Time (mins)</th>
+                <th>Customer Rating-Food</th>
+                <th>Customer Rating-Delivery</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order[0] }}</td>
+                <td>{{ order[1] }}</td>
+                <td>{{ order[2] }}</td>
+                <td>{{ order[3] }}</td>
+                <td>{{ order[4] }}</td>
+                <td>{{ order[5] }}</td>
+                <td>{{ order[6] }}</td>
+                <td>{{ order[7] }}</td>
+                <td>{{ order[8] }}</td>
+                <td>{{ order[9] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        
+    </table>
+</body>
+</html>
